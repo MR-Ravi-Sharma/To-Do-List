@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --delBtnClr: #bf4040;
+  --hoverClr: red;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #153677, #4e085f);
+  padding: 10px;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  min-height: 300px;
+  margin: 100px auto 20px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+@media (max-width: 540px) {
+  .todo-app {
+    margin: 50px auto;
+  }
+}
+
+.todo-app h2 {
+  color: red;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+.row button {
+  border: none;
+  outline: none;
+  padding: 16px 20px;
+  width: 71px;
+  border-radius: 0 25px 25px 0;
+  background: linear-gradient(135deg, #153677, #4e085f);
+  color: #fff;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+  padding: 12px 8px 12px 30px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: "⚪";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 14px;
+  top: 1/2;
+  left: 6px;
+  transform: translate(0, -2px);
+}
+
+ul li > p {
+  display: inline;
+  font-size: 17px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "✅";
+}
+
+li .btn-container {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 1/2;
+}
+
+li .btn-container span {
+  background: #777;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  margin-left: 3px;
+}
+
+li .btn-container span:hover {
+  background: red;
+}
+
+.btn-container .edit-btn {
+  background: #466d1d;
+}
+
+.btn-container .edit-btn:hover {
+  background: green;
+}
+
+li.checked .btn-container .edit-btn {
+  background: gray;
+}
+
+li.checked .btn-container .delete-btn {
+  background: #bf4040;
+}
+
+li.checked .btn-container .delete-btn:hover {
+  background: red;
+}
